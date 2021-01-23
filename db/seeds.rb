@@ -34,6 +34,7 @@ review_type_two = ReviewType.create(name: "Full", code: "RRF")
 1000.times do
   tv_show_one.reviews.create(
     title: "This is a great show",
+    status: :accepted,
     description: "At first it was not as good as i was expecting but after finish it, I was happy with it.",
     user_id: user_one.id,
     scheduled_date: Time.now + 9.hours,
@@ -45,6 +46,7 @@ end
 1500.times do
   tv_show_one.reviews.create(
     title: "This is a really bad show",
+    status: :cancelled,
     description: "It is a really bad show. do not watch it!!.",
     user_id: user_one.id,
     review_type_id: review_type_one.id,
@@ -57,6 +59,7 @@ end
 5000.times do
   tv_show_one.reviews.create(
     title: "It could get better",
+    status: :denied,
     description: "It is good but it could be better.",
     review_type_id: review_type_one.id,
     votes: Faker::Number.number(digits: 2),
@@ -67,6 +70,7 @@ end
 1000.times do
   tv_show_one.reviews.create(
     title: "This is a great show",
+    status: :accepted,
     description: "At first it was not as good as i was expecting but after finish it, I was happy with it.",
     user_id: user_two.id,
     scheduled_date: Time.now + 2.days,
@@ -78,6 +82,7 @@ end
 1500.times do
   tv_show_one.reviews.create(
     title: "This is a really bad show",
+    status: :cancelled,
     description: "It is a really bad show. do not watch it!!.",
     user_id: user_two.id,
     review_type_id: review_type_one.id,
@@ -90,6 +95,7 @@ end
 1000.times do
   tv_show_one.reviews.create(
     title: "This is a great show",
+    status: :denied,
     description: "At first it was not as good as i was expecting but after finish it, I was happy with it.",
     user_id: user_three.id,
     scheduled_date: Time.now + 10.hours,
@@ -101,6 +107,7 @@ end
 1500.times do
   tv_show_one.reviews.create(
     title: "This is a really bad show",
+    status: :accepted,
     description: "It is a really bad show. do not watch it!!.",
     user_id: user_three.id,
     review_type_id: review_type_one.id,
@@ -112,6 +119,7 @@ end
 1500.times do
   tv_show_one.reviews.create(
     title: "This is a really bad show",
+    status: :cancelled,
     description: "It is a really bad show. do not watch it!!.",
     user_id: user_four.id,
     review_type_id: review_type_one.id,
@@ -126,6 +134,7 @@ end
 1000.times do
   tv_show_two.reviews.create(
     title: "This is a great show",
+    status: :denied,
     description: "At first it was not as good as i was expecting but after finish it, I was happy with it.",
     user_id: user_one.id,
     scheduled_date: Time.now + 2.hours,
@@ -137,6 +146,7 @@ end
 1500.times do
   tv_show_two.reviews.create(
     title: "This is a really bad show",
+    status: :accepted,
     description: "It is a really bad show. do not watch it!!.",
     user_id: user_one.id,
     review_type_id: review_type_one.id,
@@ -148,6 +158,7 @@ end
 5000.times do
   tv_show_two.reviews.create(
     title: "It could get better",
+    status: :cancelled,
     description: "It is good but it could be better.",
     review_type_id: review_type_one.id,
     scheduled_date: Time.now + 10.minutes,
@@ -159,6 +170,7 @@ end
 1000.times do
   tv_show_two.reviews.create(
     title: "This is a great show",
+    status: :denied,
     description: "At first it was not as good as i was expecting but after finish it, I was happy with it.",
     user_id: user_two.id,
     scheduled_date: Time.now + 6.hours,
@@ -170,6 +182,7 @@ end
 1500.times do
   tv_show_two.reviews.create(
     title: "This is a really bad show",
+    status: :accepted,
     description: "It is a really bad show. do not watch it!!.",
     user_id: user_two.id,
     review_type_id: review_type_one.id,
@@ -181,6 +194,7 @@ end
 1000.times do
   tv_show_two.reviews.create(
     title: "This is a great show",
+    status: :accepted,
     description: "At first it was not as good as i was expecting but after finish it, I was happy with it.",
     user_id: user_three.id,
     votes: Faker::Number.number(digits: 2),
@@ -191,6 +205,7 @@ end
 1500.times do
   tv_show_two.reviews.create(
     title: "This is a really bad show",
+    status: :accepted,
     description: "It is a really bad show. do not watch it!!.",
     user_id: user_three.id,
     review_type_id: review_type_one.id,
@@ -204,6 +219,7 @@ end
 1500.times do
   tv_show_two.reviews.create(
     title: "This is a really bad show",
+    status: :cancelled,
     description: "It is a really bad show. do not watch it!!.",
     user_id: user_four.id,
     review_type_id: review_type_one.id,
@@ -219,6 +235,7 @@ end
 1000.times do
   tv_show_three.reviews.create(
     title: "This is a great show",
+    status: :accepted,
     description: "At first it was not as good as i was expecting but after finish it, I was happy with it.",
     user_id: user_one.id,
     votes: Faker::Number.number(digits: 2),
@@ -229,6 +246,7 @@ end
 1500.times do
   tv_show_three.reviews.create(
     title: "This is a really bad show",
+    status: :accepted,
     description: "It is a really bad show. do not watch it!!.",
     user_id: user_one.id,
     review_type_id: review_type_one.id,
@@ -241,6 +259,7 @@ end
 5000.times do
   tv_show_three.reviews.create(
     title: "It could get better",
+    status: :accepted,
     description: "It is good but it could be better.",
     review_type_id: review_type_one.id,
     scheduled_date: Time.now + 8.hours,
@@ -252,6 +271,7 @@ end
 1000.times do
   tv_show_three.reviews.create(
     title: "This is a great show",
+    status: :denied,
     description: "At first it was not as good as i was expecting but after finish it, I was happy with it.",
     user_id: user_two.id,
     scheduled_date: Time.now + 5.hours,
@@ -263,6 +283,7 @@ end
 1500.times do
   tv_show_three.reviews.create(
     title: "This is a really bad show",
+    status: :accepted,
     description: "It is a really bad show. do not watch it!!.",
     user_id: user_two.id,
     review_type_id: review_type_one.id,
@@ -275,6 +296,7 @@ end
 1000.times do
   tv_show_three.reviews.create(
     title: "This is a great show",
+    status: :accepted,
     description: "At first it was not as good as i was expecting but after finish it, I was happy with it.",
     user_id: user_three.id,
     scheduled_date: Time.now + 2.hours,
@@ -286,6 +308,7 @@ end
 1500.times do
   tv_show_three.reviews.create(
     title: "This is a really bad show",
+    status: :cancelled,
     description: "It is a really bad show. do not watch it!!.",
     user_id: user_three.id,
     review_type_id: review_type_one.id,
@@ -298,6 +321,7 @@ end
 1500.times do
   tv_show_three.reviews.create(
     title: "This is a really bad show",
+    status: :accepted,
     description: "It is a really bad show. do not watch it!!.",
     user_id: user_four.id,
     review_type_id: review_type_one.id,
@@ -315,6 +339,7 @@ end
 1000.times do
   tv_show_four.reviews.create(
     title: "This is a great show",
+    status: :accepted,
     description: "At first it was not as good as i was expecting but after finish it, I was happy with it.",
     user_id: user_one.id,
     votes: Faker::Number.number(digits: 2),
@@ -325,6 +350,7 @@ end
 1500.times do
   tv_show_four.reviews.create(
     title: "This is a really bad show",
+    status: :denied,
     description: "It is a really bad show. do not watch it!!.",
     user_id: user_one.id,
     review_type_id: review_type_one.id,
@@ -337,6 +363,7 @@ end
 5000.times do
   tv_show_four.reviews.create(
     title: "It could get better",
+    status: :accepted,
     description: "It is good but it could be better.",
     review_type_id: review_type_one.id,
     scheduled_date: Time.now + 4.days,
@@ -348,6 +375,7 @@ end
 1000.times do
   tv_show_four.reviews.create(
     title: "This is a great show",
+    status: :accepted,
     description: "At first it was not as good as i was expecting but after finish it, I was happy with it.",
     user_id: user_two.id,
     scheduled_date: Time.now + 2.days,
@@ -359,6 +387,7 @@ end
 1500.times do
   tv_show_four.reviews.create(
     title: "This is a really bad show",
+    status: :cancelled,
     description: "It is a really bad show. do not watch it!!.",
     user_id: user_two.id,
     review_type_id: review_type_one.id,
@@ -371,6 +400,7 @@ end
 1000.times do
   tv_show_four.reviews.create(
     title: "This is a great show",
+    status: :accepted,
     description: "At first it was not as good as i was expecting but after finish it, I was happy with it.",
     user_id: user_three.id,
     scheduled_date: Time.now + 4.hours,
@@ -382,6 +412,7 @@ end
 1500.times do
   tv_show_four.reviews.create(
     title: "This is a really bad show",
+    status: :denied,
     description: "It is a really bad show. do not watch it!!.",
     user_id: user_three.id,
     review_type_id: review_type_one.id,
@@ -395,6 +426,7 @@ end
 1500.times do
   tv_show_four.reviews.create(
     title: "This is a really bad show",
+    status: :accepted,
     description: "It is a really bad show. do not watch it!!.",
     user_id: user_four.id,
     review_type_id: review_type_one.id,
