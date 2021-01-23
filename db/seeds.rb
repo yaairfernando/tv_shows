@@ -56,6 +56,19 @@ end
   )
 end
 
+1500.times do
+  tv_show_one.reviews.create(
+    title: "This is a really bad show",
+    status: :accepted,
+    description: "It is a really bad show. do not watch it!!.",
+    user_id: user_one.id,
+    review_type_id: review_type_one.id,
+    scheduled_date: Time.now + 1.hours,
+    votes: Faker::Number.number(digits: 2),
+    revenue: Faker::Number.number(digits: 3)
+  )
+end
+
 5000.times do
   tv_show_one.reviews.create(
     title: "It could get better",
@@ -83,6 +96,19 @@ end
   tv_show_one.reviews.create(
     title: "This is a really bad show",
     status: :cancelled,
+    description: "It is a really bad show. do not watch it!!.",
+    user_id: user_two.id,
+    review_type_id: review_type_one.id,
+    scheduled_date: Time.now + 30.minutes,
+    votes: Faker::Number.number(digits: 2),
+    revenue: Faker::Number.number(digits: 3)
+  )
+end
+
+1500.times do
+  tv_show_one.reviews.create(
+    title: "This is a really bad show",
+    status: :accepted,
     description: "It is a really bad show. do not watch it!!.",
     user_id: user_two.id,
     review_type_id: review_type_one.id,
@@ -128,6 +154,19 @@ end
   )
 end
 
+1500.times do
+  tv_show_one.reviews.create(
+    title: "This is a really bad show",
+    status: :accepted,
+    description: "It is a really bad show. do not watch it!!.",
+    user_id: user_four.id,
+    review_type_id: review_type_one.id,
+    votes: Faker::Number.number(digits: 2),
+    revenue: Faker::Number.number(digits: 3)
+  )
+end
+
+
 
 
 # TV SHOW TWO
@@ -159,6 +198,18 @@ end
   tv_show_two.reviews.create(
     title: "It could get better",
     status: :cancelled,
+    description: "It is good but it could be better.",
+    review_type_id: review_type_one.id,
+    scheduled_date: Time.now + 10.minutes,
+    votes: Faker::Number.number(digits: 2),
+    revenue: Faker::Number.number(digits: 3)
+  )
+end
+
+5000.times do
+  tv_show_two.reviews.create(
+    title: "It could get better",
+    status: :accepted,
     description: "It is good but it could be better.",
     review_type_id: review_type_one.id,
     scheduled_date: Time.now + 10.minutes,
@@ -228,6 +279,20 @@ end
     revenue: Faker::Number.number(digits: 3)
   )
 end
+
+1500.times do
+  tv_show_two.reviews.create(
+    title: "This is a really bad show",
+    status: :accepted,
+    description: "It is a really bad show. do not watch it!!.",
+    user_id: user_four.id,
+    review_type_id: review_type_one.id,
+    scheduled_date: Time.now + 3.days,
+    votes: Faker::Number.number(digits: 2),
+    revenue: Faker::Number.number(digits: 3)
+  )
+end
+
 
 
 
@@ -317,6 +382,18 @@ end
   )
 end
 
+1500.times do
+  tv_show_three.reviews.create(
+    title: "This is a really bad show",
+    status: :accepted,
+    description: "It is a really bad show. do not watch it!!.",
+    user_id: user_three.id,
+    review_type_id: review_type_one.id,
+    votes: Faker::Number.number(digits: 2),
+    revenue: Faker::Number.number(digits: 3)
+  )
+end
+
 
 1500.times do
   tv_show_three.reviews.create(
@@ -388,6 +465,19 @@ end
   tv_show_four.reviews.create(
     title: "This is a really bad show",
     status: :cancelled,
+    description: "It is a really bad show. do not watch it!!.",
+    user_id: user_two.id,
+    review_type_id: review_type_one.id,
+    scheduled_date: Time.now + 9.hours,
+    votes: Faker::Number.number(digits: 2),
+    revenue: Faker::Number.number(digits: 3)
+  )
+end
+
+1500.times do
+  tv_show_four.reviews.create(
+    title: "This is a really bad show",
+    status: :accepted,
     description: "It is a really bad show. do not watch it!!.",
     user_id: user_two.id,
     review_type_id: review_type_one.id,
