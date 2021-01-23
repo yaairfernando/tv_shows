@@ -1,0 +1,2 @@
+class ReviewType < ApplicationRecord
+end
