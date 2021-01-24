@@ -80,4 +80,29 @@ ActiveRecord::Schema.define(version: 2021_01_23_200635) do
   add_foreign_key "reviews", "users"
   add_foreign_key "teams", "groups"
   add_foreign_key "users", "teams"
+
+  create_view "latest_reviews", sql_definition: <<-SQL
+      SELECT rev.id,
+      rev.tv_show_id,
+      rev.description,
+      rev.title,
+      rev.status,
+      rev.scheduled_date,
+      rev.votes,
+      rev.revenue,
+      usr.name AS user_name,
+      usr.email AS user_email,
+      tms.name AS team_name,
+      gps.name AS group_name,
+      (rev.revenue / rev.votes) AS revenue_per_vote,
+      concat(gps.id, '-', rev.id) AS uid
+     FROM ((((reviews rev
+       JOIN users usr ON ((usr.id = rev.user_id)))
+       JOIN teams tms ON ((tms.id = usr.team_id)))
+       JOIN groups gps ON ((gps.id = tms.group_id)))
+       JOIN review_types rev_tp ON ((rev_tp.id = rev.review_type_id)))
+    WHERE ((usr.status = 0) AND (tms.status = ANY (ARRAY[0, 1])) AND (rev.status = ANY (ARRAY[0, 1])) AND (rev.scheduled_date <= now()))
+    GROUP BY rev.id, usr.name, usr.email, tms.name, gps.name, gps.created_at, gps.id
+    ORDER BY rev.created_at, gps.created_at;
+  SQL
 end
